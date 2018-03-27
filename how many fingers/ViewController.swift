@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var txtF: UITextField!
+    @IBOutlet weak var lbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +21,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    @IBAction func btn(_ sender: Any) {
+        let number = arc4random_uniform(6)
+        print(number)
+        
+        let numberString = String(number)
+        
+        if txtF.text == numberString {
+            lbl.text = "정답~!~!~!"
+        } else {
+            lbl.text = "실패~! 다시ㅋ 결과 : \(number)"
+    }
+    
+}
 }
 
